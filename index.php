@@ -8,31 +8,15 @@
     <meta name="description" content="${description}" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/riot/2.3.18/riot+compiler.js'></script>
 
+    <style>${style}</style>
+  </head>
+  <body>
+    <!-- ユーザー定義のタグをここに展開 -->
+    <app title='Hello, Riot.js'></app>
+
+    <!-- app タグを定義 -->
 <script type='riot/tag'>  
   <app>
-    <h1>Event handlers</h1>
-
-    <button onclick='{click}'>click</button>
-
-    <ul>
-      <li each='{list}'>
-        <button onclick='{clickItem}'>{name}</button>
-      </li>
-    </ul>
-
-    this.list = [
-      {name:'hoge'},
-      {name:'foo'},
-      {name:'bar'},
-    ];
-
-    this.click = function() {
-      console.log('click されたよー');
-    };
-
-    this.clickItem = function(e) {
-      console.log(e.item.name + 'が click されたよー');
-    };
     <h1>form</h1>
 
     <form onsubmit='{submit}'>
@@ -53,21 +37,7 @@
   </app>
 </script> 
 
-    <style>${style}</style>
-  </head>
-  <body>
-    <!-- ユーザー定義のタグをここに展開 -->
-    <app title='Hello, Riot.js'></app>
-
-    <!-- app タグを定義 -->
-    <script type="riot/tag">
-      <app>
-        <h1>{ title }</h1>
-        this.title = opts.title;
-      </app>
-    </script>
-
-    <script>
+	<script>
       // マウント
       riot.mount('*');
     </script>
